@@ -1,9 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 
-let incCounter=()=>{
-  useState(counter+1)
-}
+
 function App() {
   let[counter,setCounter]=useState(0)
   let[decounter,setdecounter]=useState(counter)
