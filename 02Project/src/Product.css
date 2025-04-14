@@ -1,0 +1,7 @@
+.Product{
+    background-color: rgb(65, 205, 81);
+    border-radius: 10px;
+    border: 2px solid gold;
+    padding: 10px;
+    margin: 10px;
+}
