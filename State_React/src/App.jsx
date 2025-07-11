@@ -7,6 +7,9 @@ import LikeButton from './LikeButton'
 import FalshLight from './FalshLight'
 import CounterCallback from './CounterCallback'
 import Rating from './Rating'
+import TestCounter from './TestCounter'
+import EventObject from './EventObject'
+import ToggleTF from './ToggleTF'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,7 +21,10 @@ function App() {
     {/* <LikeButton/> */}
     {/* <FalshLight/> */}
     {/* <CounterCallback/> */}
-    <Rating/>
+    {/* <Rating/> */}
+    {/* <TestCounter/> */}
+    {/* <EventObject/> */}
+    <ToggleTF/>
     </>
   )
 }

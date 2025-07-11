@@ -22,9 +22,29 @@ function TodoLIst() {
         })
     }
     let handleUpperCase =()=>{
-        task.map((individualTask)=>{
-            console.log(individualTask.uniquetask)
+        let newObjectdata = task.map((individualTask)=>{
+            return {
+                ...individualTask ,
+                uniquetask:individualTask.uniquetask.toUpperCase()
+            }
+
         })
+        setTask(newObjectdata)
+    }
+    let handleUpperCaseOne =(id)=>{
+       let copy= task.map((each)=>{
+            if(each.id ==id){
+                return{
+                ...each,
+                uniquetask:each.uniquetask.toUpperCase(),
+                }
+            }
+            else{
+                return each;
+            }
+        })
+        console.log(copy)
+        setTask(copy)
     }
   return (
     <div>
@@ -41,6 +61,8 @@ function TodoLIst() {
                 <li key={element.id}>
                     <span>{element.uniquetask}</span>
                     <button onClick={()=>handleClick(element.id)}>Delete</button>
+                    &nbsp;
+                    <button onClick={()=>handleUpperCaseOne(element.id)}>UpperCase</button>
                 </li>
             ))
         }
