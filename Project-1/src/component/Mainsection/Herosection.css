@@ -1,0 +1,38 @@
+.formdata{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 24px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.formdata form{
+    width: 100%;
+}
+.formdata h1{
+    font-size: 50px;
+}
+.formdata p{
+    font-size: 20px;
+}
+.formdata form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formdata .inputField{
+    display: flex;
+    flex-direction: column;
+}
+.inputField label{
+    font-size: 20px;
+}
+.inputField input{
+    padding:  20px;
+    width: 400px;
+    border-radius: 10px;
+    font-size:20px ;
+}
+Button{
+  
+}
