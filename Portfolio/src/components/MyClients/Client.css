@@ -1,0 +1,33 @@
+.client{
+    min-height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 0 1rem;
+
+}
+.clientHead{
+    margin: 1rem 0;
+    font-size: 3rem;
+}
+.clientPara{
+    font-weight: 300;
+    font-size: 1rem;
+    max-width:50rem ;
+}
+.clientImg{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.eachImage{
+    width: 10rem;
+
+}
