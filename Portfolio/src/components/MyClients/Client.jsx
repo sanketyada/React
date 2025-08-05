@@ -53,8 +53,8 @@ function Client() {
           Please fill out the form below to discuss any work opportunities
         </span>
         <form ref={form} onSubmit={sendEmail} className="contactform">
-          <input type="text" className="name" placeholder="Your Name" name="from_name" />
-          <input type="email" className="email" placeholder="Your Email" name="from_email" />
+          <input required type="text" className="name" placeholder="Your Name" name="from_name" />
+          <input required type="email" className="email" placeholder="Your Email" name="from_email" />
           <textarea
             name="message"
             rows="5"
