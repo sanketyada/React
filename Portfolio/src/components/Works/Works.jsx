@@ -9,7 +9,7 @@ import Portfolio6 from "../../assets/portfolio-6.png";
 
 function Works() {
   return (
-    <section className="work">
+    <section id="work">
       <h2 className="workhead">My Portfolio</h2>
       <p className="workdecs">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus quaerat

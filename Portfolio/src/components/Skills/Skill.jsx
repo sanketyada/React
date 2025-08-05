@@ -6,7 +6,7 @@ import "./Skill.css"
 
 function Skill() {
   return (
-    <section className="skills">
+    <section id="skills">
       <span className="skilltitle">What I Do</span>
       <span className="skilldec">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. At facere

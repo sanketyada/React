@@ -10,7 +10,7 @@ function Intro() {
         <div className="introContant">
           <span className="hello">Hello,</span>
           <span className="introname">
-            I'm <span className="name">Sanket</span>
+            I'm <span className="username">Sanket</span>
             <br />
             Website Designer
           </span>
