@@ -67,7 +67,7 @@ function Login() {
             label="Password"
             type="password"
             placeholder="Enter Your Password"
-            {...register("password"),{ required:true}}/>
+            {...register("password",{ required:true})}/>
             <Button type="submit" className="w-full">Sign In</Button>
           </div>
         </form>

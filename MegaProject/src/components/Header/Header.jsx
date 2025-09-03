@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import LogoutButton from "./LogoutButton";
 
 function Header() {
-  const authStatus = useSelector((state) => state.status);
+  const authStatus = useSelector((state) => state.auth.status);
   // console.log(authStatus)
   const navigate = useNavigate();
 
@@ -69,7 +69,6 @@ function Header() {
           )}
         </nav>
       </Container>
-      <LogoutButton/>
     </header>
   );
 }
