@@ -23,7 +23,7 @@ export class Service {
           content,
           featuredImage,
           status,
-          userId,
+          userid:userId,
         }
       );
     } catch (error) {
@@ -62,7 +62,7 @@ export class Service {
   }
   async getPost(slug) {
     try {
-     return await this.databases.getDocument(
+      return await this.databases.getDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
         slug
@@ -72,48 +72,45 @@ export class Service {
       return false;
     }
   }
-  async getPosts(queries = [Query.equal("status","active")]){
+  async getPosts(queries = [Query.equal("status", "active")]) {
     try {
-        return await this.databases.listDocuments(
-          conf.appwriteDatabaseId,
-          conf.appwriteCollectionId,
-          queries
-        )
+      return await this.databases.listDocuments(
+        conf.appwriteDatabaseId,
+        conf.appwriteCollectionId,
+        queries
+      );
     } catch (error) {
-      console.log(`Error in getPosts ${error}`) 
+      console.log(`Error in getPosts ${error}`);
     }
   }
   //File Upload Services
-  async uploadFile(file){
+  async uploadFile(file) {
     try {
       return await this.bucket.createFile(
         conf.appwriteBucketId,
         ID.unique(),
         file
-      )
+      );
     } catch (error) {
-      console.log("Error in UploadFile",error);
+      console.log("Error in UploadFile", error);
       return false;
     }
   }
-  async deleteFile(fileId){
+  async deleteFile(fileId) {
     try {
-      await this.bucket.deleteFile(
-        conf.appwriteBucketId,
-        fileId,
-      )
+      await this.bucket.deleteFile(conf.appwriteBucketId, fileId);
     } catch (error) {
-      console.log("Error in DeleteFile ",error);
+      console.log("Error in DeleteFile ", error);
     }
   }
-  getFilePreview(fileId){
+  getFileView(fileId) {
     try {
-      return this.bucket.getFilePreview(
+      return this.bucket.getFileView(
         conf.appwriteBucketId,
         fileId
-      )
+      );
     } catch (error) {
-      console.log("Error in getFilePreview",error)
+      console.log("Error in getFileView", error);
     }
   }
 }
