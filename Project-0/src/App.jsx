@@ -2,14 +2,14 @@ import { useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import Navbar from "./components/Navbar";
-
+import Test from "./components/Test";
 function App() {
   const [data, setData] = useState([]);
   let inputRef = useRef("");
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <input type="text" ref={inputRef} />
       <button
         onClick={() => {
@@ -18,7 +18,8 @@ function App() {
       >
         Click
       </button>
-      {data.map((el,idx)=><h2 key={idx}>{el}</h2>)}
+      {data.map((el,idx)=><h2 key={idx}>{el}</h2>)} */}
+      <Test/>
     </>
   );
 }
