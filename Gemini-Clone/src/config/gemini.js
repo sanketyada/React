@@ -4,8 +4,6 @@ const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const ai = new GoogleGenAI({apiKey: GEMINI_API_KEY});
 
 async function runChat(prompt) {
-  console.log("Gemini API Key:", GEMINI_API_KEY); 
-  console.log(prompt)
   const response = await ai.models.generateContent({
     model: 'gemini-2.0-flash-001',
     contents: prompt,
