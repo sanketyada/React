@@ -15,17 +15,34 @@ function ContextProvider({ children }) {
 
     const delayPara = (index, nextWord) => {
       setTimeout(() => {
-        setResultdata((prev)=>prev + nextWord)
-      }, 50 *index);
+        setResultdata((prev) => prev + nextWord);
+      }, 50 * index);
     };
+
+    const newChat =()=>{
+      console.log("sanket")
+      setLoading(false)
+      setShowResult(false)
+    }
 
     const onSent = async (input) => {
       setResultdata("");
       setLoading(true);
       setShowResult(true);
-      setRecentPrompt(input);
-      setPrevPrompt((prev)=>[...prev,input])
-      const response = await runChat(input);
+
+      let response;
+
+      if (input !== undefined && input !== "") {
+        setPrevPrompt((prev) => [...prev, input]);
+        setRecentPrompt(input);
+        response = await runChat(input);
+      } else {
+        console.warn("No input provided, skipping runChat");
+      }
+
+      // setRecentPrompt(input);
+      // setPrevPrompt((prev) => [...prev, input]);
+      // const response = await runChat(input);
 
       // Handle **bold**
       let responseArray = response.split("**");
@@ -43,11 +60,11 @@ function ContextProvider({ children }) {
       newResponse = newResponse
         .replace(/\*(.*?)\*/g, "<i>$1</i>") // convert *text* → <i>text</i>
         .replace(/\n/g, "<br/>"); // convert new lines to <br>
-      
-      let newResponseArray  = newResponse.split(" ");
+
+      let newResponseArray = newResponse.split(" ");
       for (let i = 0; i < newResponseArray.length; i++) {
-        const nextWord = newResponseArray[i]
-        delayPara(i,nextWord+" ")
+        const nextWord = newResponseArray[i];
+        delayPara(i, nextWord + " ");
       }
       // setResultdata(newResponse);
       setLoading(false);
@@ -65,6 +82,7 @@ function ContextProvider({ children }) {
       resultdata,
       input,
       setInput,
+      newChat
     };
     return <Context.Provider value={contextValue}>{children}</Context.Provider>;
   }

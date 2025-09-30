@@ -90,7 +90,7 @@ function Main() {
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img src={assets.send_icon} onClick={() => onSent(input)} />
+              {input ?<img src={assets.send_icon} onClick={() => onSent(input)} /> :null}
             </div>
           </div>
           <div className="bottomInfo">
