@@ -20,7 +20,8 @@ function Main() {
   return (
     <div className="main">
       <div className="nav">
-        <p>Gemini</p>
+        {/* <p>Gemini</p> */}
+        <p>Ai Agent</p>
         <img src={assets.user_icon} alt="" />
       </div>
 
@@ -30,7 +31,7 @@ function Main() {
             {" "}
             <div className="greet">
               <p>
-                <span>Hello,Dev</span>
+                <span>Hello,Sanket</span>
               </p>
               <p>How Can I Help You Today</p>
             </div>
